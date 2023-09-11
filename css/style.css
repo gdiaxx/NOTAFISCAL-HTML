@@ -1,0 +1,44 @@
+body{
+  background-image: url("../img/nfc.jpg");
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
+
+}
+fieldset {
+  background-color:#FFFFFF;
+	padding-top:10px;
+	border:1px solid #666;
+	border-radius:10px;
+  box-shadow:0 0 15px rgb(0, 0, 0);
+}
+legend {
+  color: #ffffff;
+  background-color: #FFFFFF ;
+	margin-top:-20px;
+}
+
+.produ1{
+  width:31%; 
+}
+.produ2{
+  width:31%; 
+}
+.produ3{
+  width:31%; 
+}
+.btn{
+  width: 20%;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+
+.btn:hover {
+  background-color: #555555;
+  color: white;
+}

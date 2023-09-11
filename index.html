@@ -1,0 +1,163 @@
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="css/style.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+   <link rel="icon" href="img/logo1.png" />
+   <script src="js/script.js"></script>
+ <title> Nota fiscal </title>
+ </head>
+
+ <body>
+<div class="corpo">
+<form action="Formulario" method="get" action=".">
+<center>
+<!------------------------DADOS PESSOAIS------------------------>
+<fieldset style="width:40%">
+ <legend><b>Dados do cliente</b></legend>
+ <table cellspacing="10">
+  <i style="color: red;">*</i> Campos Obrigatórios!
+  <tr>
+   <td>
+    <label for="nome">Nome:<i style="color: red;">*</i></label>
+   </td>
+   <td align="left">
+    <input type="text" name="Nome"size="30" id="nome" >&nbsp;&nbsp;
+	 <label for="CPF">CPF: <i style="color: red;">*</i></label>
+	    <input type="text" class="cpf" id="cpf" name="cpf" Placeholder="000.000.000-00" size="10">
+   </td>
+  </tr>
+<!--------------------------------------------------------------->
+  <tr>
+    <td>
+     <label for="Telefone">Telefone:<i style="color: red;">*</i></label>
+    </td>
+    <td align="left">
+     <input type="text" class="telefone" id="telefone" name="telefone" Placeholder="(00) 00000-0000" size="10">
+    </td>
+   </tr>
+<!--------------------------------------------------------------->
+  <tr>
+    <td>
+     <label for="CEP">CEP:<i style="color: red;">*</i></label><br>
+    </td>
+    <td align="left">
+     <input name="cep" type="text" class="cep" id="cep" value="" size="7" maxlength="9" onblur="pesquisacep(this.value);" placeholder="00000-000"/>&nbsp;&nbsp;&nbsp;
+	 <label for="Rua">Rua: </label>
+	 <input name="rua" type="text" id="rua" size="30"/>
+    </td>
+   </tr> 
+<!--------------------------------------------------------------->  
+  <tr>
+    <td>
+     <label for="Bairro">Bairro: </label>
+    </td>
+    <td align="left">
+     <input name="bairro" type="text" id="bairro" size="11"/>
+	 <label for="Cidade">Cidade: </label>
+	 <input name="cidade" type="text" id="cidade" size="10" />
+	 <label for="Estado">Estado: </label>
+	 <input name="uf" type="text" id="uf" size="2"/>
+    </td>
+   </tr> 
+ <!-------------------------------------------------------------->  
+   <tr>
+    <td>
+	<label for="Numero">Número:<i style="color: red;">*</i></label>
+    </td>
+        <td align="left">
+     <input type="text" id="numerocasa" name="numerocasa" size="1"/>
+    </td>
+   </tr>
+</table>
+</fieldset>
+<!-------------------------Vendedor------------------------------>
+<fieldset style="width:40%">
+  <table>
+  <legend><b>Vendedor</b></legend>
+   <tr>
+    <td>
+     <label for="CodVendedor">Código do vendedor:<i style="color: red;">*</i></label>
+    </td>
+    <td align="left">
+     <input type="text" name="CodVendedor" id="CodVendedor" size="1">
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <label for="NVendedor">Nome do vendedor: </label>
+    </td>
+    <td align="left">
+     <input type="text" name="Nome" >
+    </td>
+   </tr>
+   </table>
+ </fieldset>
+ <!--------------------------------------------------------------->
+<fieldset style="width:40%">
+  
+ <legend><b>Dados de entrada da NFe</b></legend>
+  <tr>
+   <td>
+    <label for="numeroNFE">Número da NFe:<i style="color: red;">*</i></label>
+   </td>
+   <td align="left">
+   <input type="text" name="numeroNFE" id="numeroNFE" size="10" >
+	 <label for="Data1">Data de emissão: </label>
+	 <input type="date" id="data1" name="data1">
+   </td>
+   <center>
+<br><b>Dados de entrada do produto</b><br>
+   <td align="left">
+    <select name="idservico[]" class="produ1" id="idservico1">
+      <option value="0" disabled selected>Nome do Produto</option>
+      <option data-valor="1679,00" value="1679"> Samsung Galaxy A51 </option> 
+      <option data-valor="5799,00" value="5799"> Samsung Galaxy Note20 </option>
+      <option data-valor="2649,00" value="2649"> Samsung Galaxy S10+ </option> 
+    </select>
+    <input type="text" name="quant1" size="1" placeholder="Qtde">
+	  <input oninput="Soma()" align="left" name="valor1" type="text" id="valor1" size="4" placeholder="P/Uni."/>
+	</td>
+<!---->
+<br><br>
+  <td align="left">
+    <select name="idservico[]" class="produ2" id="idservico2">
+      <option value="0" disabled selected>Nome do Produto</option>
+      <option data-valor="3733,00" value="3733"> Xiaomi Mi Note 10 </option> 
+      <option data-valor="1354,00" value="1354"> Xiaomi Redmi Note 9</option>
+      <option data-valor="889,00" value="889"> Xiaomi Redmi 9A </option>
+    </select>
+    <input type="text" name="quant2" size="1" placeholder="Qtde">
+	  <input oninput="Soma()" align="left" name="valor2" type="text" id="valor2" size="4" placeholder="P/Uni."/>
+	</td>
+<!---->
+<br><br>
+  <td align="left">
+    <select name="idservico[]" class="produ3" id="idservico3"> 
+      <option value="0" disabled selected>Nome do Produto</option>
+      <option data-valor="4179,00" value="4179"> iPhone 11 </option> 
+      <option data-valor="3548,00" value="3548"> iPhone XR </option>
+	    <option data-valor="3699,00" value="3699"> iPhone SE 2 </option>
+    </select>
+    <input type="text" name="quant3" size="1" placeholder="Qtde">
+    <input oninput="Soma()" align="left" name="valor3" type="text" id="valor3" size="4" placeholder="P/Uni."/> 
+	</td>
+</center>
+  </tr>
+  <br>
+  <tr>
+    <td>  
+      <label style="color: rgb(0, 0, 0);"><b>Subtotal R$: </b><o type="text" name="valort" id="final" >00</o><g type="text">,00</g></label></label>
+<br>
+    </td>
+  </tr>
+  <!---->
+  <br>
+    <input class="btn" type="reset" value="Limpar" size="10">
+    <input class="btn" type="button" value="Salvar" onclick="exibe()">
+</fieldset>
+</form>
+</div>
+ </body>
+</html>
